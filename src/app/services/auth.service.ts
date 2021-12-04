@@ -20,6 +20,7 @@ export class AuthService {
   }
 
   logout() {
+    localStorage.removeItem('token');
   }
 
   login(usuario: UsuarioModel) {
@@ -27,7 +28,7 @@ export class AuthService {
     return this.http.get(
       `${this.url}/login/` + usuario.email + `/` + usuario.password)
       .pipe(map(resp => {
-        console.log('Entró en el map del rxjs');
+        // console.log('Entró en el map del rxjs');
         // this.guardarToken(resp['idToken']); // Cuando el back devuelva token, descomento esta linea
         this.guardarToken("TOKEN FICTICIO")
         return resp;
