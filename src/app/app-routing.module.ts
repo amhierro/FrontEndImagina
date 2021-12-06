@@ -5,12 +5,16 @@ import { HomeComponent } from './pages/home/home.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { LoginComponent } from './pages/login/login.component';
 import {AuthGuard} from './guards/auth.guard';
+import {PrincipalComponent} from './pages/principal/principal.component';
+import {FilmCreationComponent} from './pages/film-creation/film-creation.component';
 
 const routes: Routes = [
   { path: 'home'    , component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'principal', component: PrincipalComponent },
   { path: 'registro', component: RegistroComponent },
   { path: 'login'   , component: LoginComponent },
-  { path: '**', redirectTo: 'registro' }
+  { path: 'filmcreation'   , component: FilmCreationComponent },
+  { path: '**', redirectTo: 'principal' }
 ];
 
 @NgModule({

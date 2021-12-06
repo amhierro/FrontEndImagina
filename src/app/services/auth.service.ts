@@ -20,6 +20,7 @@ export class AuthService {
   }
 
   logout() {
+    console.log("debería borrarlo");
     localStorage.removeItem('token');
   }
 

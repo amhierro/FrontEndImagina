@@ -1,0 +1,24 @@
+<h1>PRINCIPAL SIN LOGIN</h1>
+<hr>
+<div class="card-columns">
+
+
+  <mat-card class="example-card" *ngFor="let card of allFilms">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{card.titulo}}</mat-card-title>
+      <mat-card-subtitle>{{card.director}} - {{card.anio}}</mat-card-subtitle>
+    </mat-card-header>
+    <img src="{{card.poster}}" alt="Poster" height="300" width="auto">
+    <mat-card-content>
+      <p>
+        {{card.sinopsis}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions *ngFor="let genero of card.genero">
+      - {{genero}}
+    </mat-card-actions>
+  </mat-card>
+
+</div>
+

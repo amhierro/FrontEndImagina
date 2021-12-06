@@ -33,7 +33,7 @@ export class RegistroComponent implements OnInit {
 
     this.auth.nuevoUsuario(this.usuario)
       .subscribe( resp => {
-        console.log(resp);
+        // console.log(resp);
         Swal.close();
         this.router.navigateByUrl('/home');
       }, (err) => {
