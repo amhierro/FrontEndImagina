@@ -1,3 +1,144 @@
-<p>
-  film-creation works!
-</p>
+<h1>Crear film</h1>
+
+<div class="container">
+  <div class="col">
+    <form (ngSubmit)="guardar( f )"
+          #f="ngForm">
+
+      <div class="form-group">
+        <label>Título</label>
+        <input type="text"
+               class="form-control"
+               placeholder="título"
+               [(ngModel)]="film.titulo"
+               name="titulo"
+               required>
+      </div>
+
+      <div class="form-group">
+        <label>Director</label>
+        <input type="text"
+               class="form-control"
+               placeholder="director"
+               [(ngModel)]="film.director"
+               name="director"
+               required>
+      </div>
+
+      <div class="form-group">
+        <label>Año</label>
+        <input type="text"
+               class="form-control"
+               placeholder="año"
+               [(ngModel)]="film.anio"
+               name="anio"
+               required>
+      </div>
+
+      <div class="form-group">
+        <label>Sinopsis</label>
+        <input type="text"
+               class="form-control"
+               placeholder="Sinopsis"
+               [(ngModel)]="film.sinopsis"
+               name="sinopsis"
+               required>
+      </div>
+
+      <div class="form-group">
+        <label>Ruta del poster</label>
+        <input type="text"
+               class="form-control"
+               placeholder="poster"
+               [(ngModel)]="film.poster"
+               name="poster"
+               required>
+      </div>
+
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input"
+                 type="checkbox" value="0"
+                 id="flexCheckDefault1"
+                 [(ngModel)]="horror"
+                 name="horror">
+          <label class="form-check-label" for="flexCheckDefault1">Terror</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input"
+                 type="checkbox" value="0"
+                 id="flexCheckDefault2"
+                 [(ngModel)]="drama"
+                 name="drama">
+          <label class="form-check-label" for="flexCheckDefault2">Drama</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input"
+                 type="checkbox" value="0"
+                 id="flexCheckDefault3"
+                 [(ngModel)]="fantasy"
+                 name="fantasy">
+          <label class="form-check-label" for="flexCheckDefault3">Fantasy</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input"
+                 type="checkbox" value="0"
+                 id="flexCheckDefault4"
+                 [(ngModel)]="thriller"
+                 name="thriller">
+          <label class="form-check-label" for="flexCheckDefault4">Thriller</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input"
+                 type="checkbox" value="0"
+                 id="flexCheckDefault5"
+                 [(ngModel)]="action"
+                 name="action">
+          <label class="form-check-label" for="flexCheckDefault5">Action</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input"
+                 type="checkbox" value="0"
+                 id="flexCheckDefault6"
+                 [(ngModel)]="crime"
+                 name="crime">
+          <label class="form-check-label" for="flexCheckDefault6">Crime</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input"
+                 type="checkbox" value="0"
+                 id="flexCheckDefault7"
+                 [(ngModel)]="adventure"
+                 name="adventure">
+          <label class="form-check-label" for="flexCheckDefault7">Adventure</label>
+        </div>
+
+      </div>
+
+
+      <hr>
+      <div class="form-group text-center">
+        <button type="submit"
+                class="btn btn-primary w-25">
+          <i class="fa fa-save"></i>
+          Guardar
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+
+<hr>
+<ul class="list-group" *ngFor="let peli of allFilms">
+  <li><a class="list-group-item" [routerLink]="['/filmdetail', peli.id]">{{peli.titulo}}</a></li>
+<!--  <li class="list-group-item">{{peli.titulo}}</li>-->
+</ul>

@@ -10,7 +10,7 @@ export class FilmService {
 
   private url = 'http://localhost:8080/api';
 
-  constructor(private http: HttpClient) {
+  constructor( private http: HttpClient ) {
   }
 
   getAllFilms() {
@@ -19,4 +19,21 @@ export class FilmService {
         return resp;
       }));
   }
+
+  getFilm(id: string){
+    return this.http.get(`${this.url}/film/`+ id);
+  }
+
+  postFilm( film: filmModel){
+    return this.http.post(`${this.url}/film/`, film);
+  }
+
+  putFilm(film: filmModel){
+    return this.http.put(`${this.url}/film/` + film.id, film);
+  }
+
+  deleteFilm(id: string){
+    return this.http.delete(`${this.url}/film/`+ id);
+  }
+
 }

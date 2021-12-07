@@ -1,9 +1,9 @@
 export class filmModel {
-  id?: number;
+  id?: string;
   titulo?: string;
-  genero?: Array<string>;
-  anio?: number;
   director?: string;
+  anio?: number;
   sinopsis?: string;
   poster?: string;
+  genero?: Array<string>;
 }
