@@ -19,6 +19,8 @@ import {UserDetailComponent} from './pages/user-detail/user-detail.component';
 import {FavFilmsComponent} from './pages/fav-films/fav-films.component';
 import {FilmCreationComponent} from './pages/film-creation/film-creation.component';
 import { FilmDetailComponent } from './pages/film-detail/film-detail.component';
+import { UserNewComponent } from './pages/user-new/user-new.component';
+import { FilmsComponent } from './pages/films/films.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { FilmDetailComponent } from './pages/film-detail/film-detail.component';
     UserDetailComponent,
     FavFilmsComponent,
     FilmCreationComponent,
-    FilmDetailComponent
+    FilmDetailComponent,
+    UserNewComponent,
+    FilmsComponent
   ],
   imports: [
     BrowserModule,

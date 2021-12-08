@@ -33,7 +33,7 @@ export class FilmCreationComponent implements OnInit {
     this.filmService.getAllFilms()
       .subscribe((data: any) => {
         this.allFilms = data;
-        console.log(data);
+        // console.log(data);
       });
   }
 
@@ -42,6 +42,7 @@ export class FilmCreationComponent implements OnInit {
       .subscribe(resp => {
         // console.log(resp);
         this.limpiaFormulario();
+        this.getAllFilms();
       });
   }
 

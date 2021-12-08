@@ -26,7 +26,7 @@ export class FilmDetailComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    console.log("Parametro recibido: " + id);
+    // console.log("Parametro recibido: " + id);
     this.getFilm(id);
   }
 
@@ -61,13 +61,12 @@ export class FilmDetailComponent implements OnInit {
   actualizaFilm(film: filmModel){
     this.filmService.putFilm(film)
       .subscribe(resp => {
-        console.log("actualiza");
+        // console.log("actualiza");
         console.log(resp);
       });
   }
 
   eliminar(){
-    console.log("eliminar");
     this.filmService.deleteFilm(this.film.id).subscribe(resp => {
       console.log(resp);
     });

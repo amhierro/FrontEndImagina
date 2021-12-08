@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UsuarioModel} from '../../models/usuario.model';
 import {NgForm} from '@angular/forms';
 import {AuthService} from '../../services/auth.service';
@@ -15,14 +15,17 @@ export class LoginComponent implements OnInit {
 
   usuario: UsuarioModel = new UsuarioModel();
 
-  constructor( private auth: AuthService,
-               private router: Router) { }
+  constructor(private auth: AuthService,
+              private router: Router) {
+  }
 
   ngOnInit() {
   }
 
   login(form: NgForm) {
-    if (form.invalid) { return; }
+    if (form.invalid) {
+      return;
+    }
 
     Swal.fire({
       allowOutsideClick: false,
@@ -31,8 +34,7 @@ export class LoginComponent implements OnInit {
     Swal.showLoading();
 
     this.auth.login(this.usuario)
-      .subscribe( resp => {
-        // console.log(resp);
+      .subscribe(resp => {
         Swal.close();
         this.router.navigateByUrl('/home');
       }, (err) => {

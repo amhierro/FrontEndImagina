@@ -14,27 +14,36 @@ export class AuthService {
   private genericRol = 'BASIC';
   private apikey = '';
   private userToken: string;
+  private username: string = 'anónimo';
 
   constructor(private http: HttpClient) {
     this.leerToken();
+    this.leerUsername();
   }
 
   logout() {
-    console.log("debería borrarlo");
     localStorage.removeItem('token');
+    localStorage.removeItem('username');
   }
 
+
+
+
   login(usuario: UsuarioModel) {
-    // console.log(JSON.stringify(usuario));
     return this.http.get(
       `${this.url}/login/` + usuario.email + `/` + usuario.password)
       .pipe(map(resp => {
-        // console.log('Entró en el map del rxjs');
+        // console.log(resp);
         // this.guardarToken(resp['idToken']); // Cuando el back devuelva token, descomento esta linea
-        this.guardarToken("TOKEN FICTICIO")
+        if(resp != null){
+          this.guardarToken("TOKEN FICTICIO");
+          let usuario: UsuarioModel = resp;
+          this.guardarUsername(usuario.username);
+        }
         return resp;
       }));
   }
+
 
   nuevoUsuario(usuario: UsuarioModel) {
     usuario.rol = this.genericRol;
@@ -53,6 +62,19 @@ export class AuthService {
   guardarToken(idToken: string) {
     this.userToken = idToken;
     localStorage.setItem('token', idToken);
+  }
+
+  guardarUsername(username: string){
+    this.username = username;
+    localStorage.setItem('username', username)
+  }
+
+  leerUsername() {
+    if (localStorage.getItem('username')) {
+      this.username = localStorage.getItem('username');
+    } else {
+      this.username = 'anónimo';
+    }
   }
 
   leerToken() {

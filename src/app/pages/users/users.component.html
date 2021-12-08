@@ -1,3 +1,26 @@
-<p>
-  users works!
-</p>
+<h1>Usuarios</h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Username</th>
+    <th scope="col">Rol</th>
+    <th scope="col">Acciones</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users">
+    <th scope="row" ><a [routerLink]="['/userDetail', user.id]">{{user.id}}</a></th>
+    <td>{{user.username}}</td>
+    <td>{{user.rol}}</td>
+    <td><button (click)="deleteUser(user.id)" type="button" class="btn btn-warning">Eliminar</button></td>
+  </tr>
+  </tbody>
+</table>
+
+<button type="button"
+        [routerLink]="['/usernew']"
+        class="btn btn-outline-primary">
+  Crear usuario
+</button>

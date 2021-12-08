@@ -1,0 +1,82 @@
+<h1>Alta de usuario</h1>
+
+<div class="row justify-content-end">
+  <a [routerLink]="['/users']">Atrás</a>
+</div>
+
+<form (ngSubmit)="onSubmit( f )"
+      #f="ngForm"
+      class="login100-form validate-form flex-sb flex-w">
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon4">USERNAME</span>
+    <input type="text"
+           class="form-control"
+           id="username"
+           placeholder="username"
+           [(ngModel)]="usuario.username"
+           aria-describedby="basic-addon3"
+           name="username"
+           minlength="6"
+           required>
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon5">PASSWORD</span>
+    <input type="text"
+           class="form-control"
+           id="password"
+           placeholder="password"
+           [(ngModel)]="usuario.password"
+           aria-describedby="basic-addon3"
+           name="password"
+           minlength="4"
+           required>
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon6">EMAIL</span>
+    <input type="email"
+           class="form-control"
+           id="email"
+           placeholder="email"
+           [(ngModel)]="usuario.email"
+           aria-describedby="basic-addon3"
+           name="email"
+           email
+           required>
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon7">ROL</span>
+    <input type="text"
+           class="form-control"
+           id="rol"
+           placeholder="rol"
+           [(ngModel)]="usuario.rol"
+           aria-describedby="basic-addon3"
+           name="rol"
+           minlength="2"
+           required>
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon8">AVATAR</span>
+    <input type="text"
+           class="form-control"
+           id="avatar"
+           placeholder="avatar"
+           [(ngModel)]="usuario.avatar"
+           aria-describedby="basic-addon3"
+           name="avatar"
+           minlength="2"
+           required>
+  </div>
+
+  <div class="container-login100-form-btn m-t-17">
+    <button class="login100-form-btn" type="submit">
+      Crear usuario
+    </button>
+  </div>
+
+</form>

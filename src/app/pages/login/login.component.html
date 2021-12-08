@@ -24,14 +24,14 @@
                 </div>
 
               <span *ngIf="f.submitted && f.controls['password'].errors"
-                    class="text-danger animated fadeIn">Al menos 6 letras</span>
+                    class="text-danger animated fadeIn">Al menos 4 letras</span>
                 <div class="wrap-input100 m-b-16" data-validate = "Password is required">
                     <input class="input100"
                            type="password"
                            name="password"
                            [(ngModel)]="usuario.password"
                            required
-                           minlength="6"
+                           minlength="4"
                            placeholder="Password">
                     <span class="focus-input100"></span>
                 </div>

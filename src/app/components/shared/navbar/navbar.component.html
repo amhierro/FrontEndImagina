@@ -12,16 +12,17 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Films</a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" [routerLink]="['films']">Films</a></li>
             <li><a class="dropdown-item" [routerLink]="['filmcreation']">Film Creation</a></li>
           </ul>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Users
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-            <li><a class="dropdown-item" href="#">User Detail</a></li>
+            <li><a class="dropdown-item" [routerLink]="['users']">Users</a></li>
           </ul>
         </li>
 
@@ -32,6 +33,11 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" (click)="salir()" href="#">Logout</a>
         </li>
+
+<!--        <li class="nav-item">-->
+<!--          <label>{{username}}</label>-->
+<!--        </li>-->
+
 
       </ul>
     </div>

@@ -23,22 +23,8 @@ export class PrincipalComponent implements OnInit {
     this.filmService.getAllFilms()
       .subscribe( (data: any) => {
         this.allFilms = data;
-        console.log(this.allFilms);
-      })
+        // console.log(this.allFilms);
+      });
   }
-
-  // getAllFilms(){
-  //   this.filmService.getAllFilms().subscribe(
-  //     resp => {
-  //       this.allFilms = resp;
-  //       console.log(this.allFilms);
-  //     }, (err) => {
-  //       console.log(err);
-  //       Swal.fire({
-  //         title: 'Error GET films',
-  //         text: 'Espere por favor...'
-  //       });
-  //     });
-  // }
 
 }

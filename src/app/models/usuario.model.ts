@@ -1,10 +1,10 @@
 export class UsuarioModel {
-  id?: number;
-  email?: string;
-  password?: string;
+  id?: string;
   username?: string;
+  password?: string;
+  email?: string;
+  rol?: string;
   avatar?: string;
   favGenders?: Array<string>;
   favFilms?: Array<string>;
-  rol?: string;
 }
