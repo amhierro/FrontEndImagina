@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {filmModel} from '../../models/film.model';
+import {FilmModel} from '../../models/filmModel';
 import {FilmService} from '../../services/film.service';
 import {NgForm} from '@angular/forms';
 
@@ -11,7 +11,7 @@ import {NgForm} from '@angular/forms';
 })
 export class FilmDetailComponent implements OnInit {
 
-  film: filmModel = new filmModel();
+  film: FilmModel = new FilmModel();
 
   horror: boolean = false;
   drama: boolean = false;
@@ -31,7 +31,7 @@ export class FilmDetailComponent implements OnInit {
   }
 
   getFilm(id: string){
-    this.filmService.getFilm(id).subscribe((resp: filmModel) => {
+    this.filmService.getFilm(id).subscribe((resp: FilmModel) => {
       // console.log(resp);
       this.film = resp;
       if(this.film.genero.indexOf('Horror') > -1){
@@ -58,7 +58,7 @@ export class FilmDetailComponent implements OnInit {
     });
   }
 
-  actualizaFilm(film: filmModel){
+  actualizaFilm(film: FilmModel){
     this.filmService.putFilm(film)
       .subscribe(resp => {
         // console.log("actualiza");

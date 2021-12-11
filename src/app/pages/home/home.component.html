@@ -1,6 +1,27 @@
+<h1>HOME</h1>
+<hr>
+<div class="card-columns">
+  <div class="card" style="width: 18rem;" *ngFor="let card of allFilms">
+    <img class="card-img-top" src="{{card.poster}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{card.titulo}}</h5>
+      <small>{{card.director}} - {{card.anio}}</small>
+      <p class="card-text">{{card.sinopsis}}</p>
+      <a [routerLink]="['/filmdetail', card.id]" class="btn btn-primary">Detalle</a>
+      <div class="row" style="margin-top: 5px">
 
-<h1>HOME LOGUEADO</h1>
+        <div class="col" *ngIf="!(usuario.favFilms.indexOf(card.id) > -1)"> <!-- ngIF  card.id no se encuentra en usuario.favFilms -->
+          <button (click)="like(card.id)" class="far fa-heart"></button>
+        </div>
 
+        <div class="col" *ngIf="usuario.favFilms.indexOf(card.id) > -1"> <!-- ngIF  card.id si se encuentra en usuario.favFilms -->
+          <button (click)="disLike(card.id)" class="fas fa-heart"></button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 <p>- Deben aparecer primero las películas de los géneros que tiene en su lista de géneros favoritos.</p>
 <p>- Debe aparecer una estrella en cada una de las películas indicando si es favorita o no del usuario , pudiendo pulsarla para añadirla o eliminarla de su lista de favoritos.</p>

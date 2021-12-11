@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FilmService} from '../../services/film.service';
-import {filmModel} from '../../models/film.model';
+import {FilmModel} from '../../models/filmModel';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 })
 export class PrincipalComponent implements OnInit {
 
-  allFilms: filmModel[] = [];
+  allFilms: FilmModel[] = [];
 
   constructor(private filmService: FilmService) {
   }

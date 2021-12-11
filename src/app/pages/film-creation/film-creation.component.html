@@ -1,7 +1,7 @@
 <h1>Crear film</h1>
 
 <div class="row justify-content-end">
-  <a [routerLink]="['home']">Home</a>
+  <a [routerLink]="['/films']">films</a>
 </div>
 
 <div class="container">
@@ -141,7 +141,4 @@
 </div>
 
 
-<hr>
-<ul class="list-group" *ngFor="let peli of allFilms">
-  <li><a class="list-group-item" [routerLink]="['/filmdetail', peli.id]">{{peli.titulo}}</a></li>
-</ul>
+

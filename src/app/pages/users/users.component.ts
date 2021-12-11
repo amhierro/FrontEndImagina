@@ -28,8 +28,6 @@ export class UsersComponent implements OnInit {
     });
   }
 
-
-
   deleteUser(id: string){
     this.userService.deleteUser(id).subscribe( resp => {
       console.log(resp);
@@ -40,6 +38,5 @@ export class UsersComponent implements OnInit {
       this.getAllUsers();
     });
   }
-
 
 }

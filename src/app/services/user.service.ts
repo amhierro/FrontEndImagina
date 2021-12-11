@@ -19,8 +19,12 @@ export class UserService {
       }));
   }
 
-  getUser(id: string){
+  getUserById(id: string){
     return this.http.get(`${this.url}/user/`+ id);
+  }
+
+  getUserByUsername(username: string){
+    return this.http.get(`${this.url}/user/username/`+ username);
   }
 
   postUser(user: UsuarioModel){

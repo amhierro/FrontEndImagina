@@ -9,71 +9,131 @@
     <form (ngSubmit)="guardar( f )"
           #f="ngForm">
 
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon3">ID</span>
+<!--      <div class="input-group mb-3">-->
+<!--        <span class="input-group-text" id="basic-addon3">ID</span>-->
+<!--        <input type="text"-->
+<!--               class="form-control"-->
+<!--               id="id"-->
+<!--               placeholder="id"-->
+<!--               [(ngModel)]="user.id"-->
+<!--               aria-describedby="basic-addon3"-->
+<!--               name="id">-->
+<!--      </div>-->
+      <div class="form-group">
+        <label>ID</label>
         <input type="text"
                class="form-control"
                id="id"
-               placeholder="id"
+               placeholder="ID"
                [(ngModel)]="user.id"
-               aria-describedby="basic-addon3"
-               name="id">
+               name="id"
+               disabled>
       </div>
-
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon4">USERNAME</span>
+<!--      <div class="input-group mb-3">-->
+<!--        <span class="input-group-text" id="basic-addon4">USERNAME</span>-->
+<!--        <input type="text"-->
+<!--               class="form-control"-->
+<!--               id="username"-->
+<!--               placeholder="username"-->
+<!--               [(ngModel)]="user.username"-->
+<!--               aria-describedby="basic-addon3"-->
+<!--               name="username">-->
+<!--      </div>-->
+      <div class="form-group">
+        <label>Username</label>
         <input type="text"
                class="form-control"
                id="username"
                placeholder="username"
                [(ngModel)]="user.username"
-               aria-describedby="basic-addon3"
-               name="username">
+               name="username"
+               required>
       </div>
-
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon5">PASSWORD</span>
-        <input type="text"
+<!--      <div class="input-group mb-3">-->
+<!--        <span class="input-group-text" id="basic-addon5">PASSWORD</span>-->
+<!--        <input type="text"-->
+<!--               class="form-control"-->
+<!--               id="password"-->
+<!--               placeholder="password"-->
+<!--               [(ngModel)]="user.password"-->
+<!--               aria-describedby="basic-addon3"-->
+<!--               name="password">-->
+<!--      </div>-->
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password"
                class="form-control"
                id="password"
                placeholder="password"
                [(ngModel)]="user.password"
-               aria-describedby="basic-addon3"
-               name="password">
+               name="password"
+               required>
       </div>
-
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon6">EMAIL</span>
-        <input type="text"
+<!--      <div class="input-group mb-3">-->
+<!--        <span class="input-group-text" id="basic-addon6">EMAIL</span>-->
+<!--        <input type="text"-->
+<!--               class="form-control"-->
+<!--               id="email"-->
+<!--               placeholder="email"-->
+<!--               [(ngModel)]="user.email"-->
+<!--               aria-describedby="basic-addon3"-->
+<!--               name="email">-->
+<!--      </div>-->
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email"
                class="form-control"
                id="email"
                placeholder="email"
                [(ngModel)]="user.email"
-               aria-describedby="basic-addon3"
-               name="email">
+               name="email"
+               required>
       </div>
 
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon7">ROL</span>
+<!--      <div class="input-group mb-3">-->
+<!--        <span class="input-group-text" id="basic-addon7">ROL</span>-->
+<!--        <input type="text"-->
+<!--               class="form-control"-->
+<!--               id="rol"-->
+<!--               placeholder="rol"-->
+<!--               [(ngModel)]="user.rol"-->
+<!--               aria-describedby="basic-addon3"-->
+<!--               name="rol">-->
+<!--      </div>-->
+      <div class="form-group">
+        <label>Rol</label>
         <input type="text"
                class="form-control"
                id="rol"
                placeholder="rol"
                [(ngModel)]="user.rol"
-               aria-describedby="basic-addon3"
-               name="rol">
+               name="rol"
+               required>
       </div>
 
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon8">AVATAR</span>
-        <input type="text"
+<!--      <div class="input-group mb-3">-->
+<!--        <span class="input-group-text" id="basic-addon8">AVATAR</span>-->
+<!--        <input type="text"-->
+<!--               class="form-control"-->
+<!--               id="avatar"-->
+<!--               placeholder="avatar"-->
+<!--               [(ngModel)]="user.avatar"-->
+<!--               aria-describedby="basic-addon3"-->
+<!--               name="avatar">-->
+<!--      </div>-->
+      <div class="form-group">
+        <label>Avatar</label>
+        <input type="url"
                class="form-control"
                id="avatar"
                placeholder="avatar"
                [(ngModel)]="user.avatar"
-               aria-describedby="basic-addon3"
-               name="avatar">
+               name="avatar"
+               required>
       </div>
+
+
+
 
 
       <div class="input-group mb-3">
@@ -155,8 +215,8 @@
             <h3>FILMS FAVORITOS</h3>
           </div>
           <div class="row">
-            <ul class="list-group" *ngFor="let film of user.favFilms">
-              <li class="list-group-item">{{film}}</li>
+            <ul class="list-group" *ngFor="let film of favFilms">
+              <li class="list-group-item">{{ film.titulo }}</li>
             </ul>
           </div>
         </div>

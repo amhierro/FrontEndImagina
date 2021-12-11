@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FilmService} from '../../services/film.service';
-import {filmModel} from '../../models/film.model';
+import {FilmModel} from '../../models/filmModel';
 import {NgForm} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-film-creation',
@@ -10,9 +11,9 @@ import {NgForm} from '@angular/forms';
 })
 export class FilmCreationComponent implements OnInit {
 
-  allFilms: filmModel[] = [];
+  allFilms: FilmModel[] = [];
 
-  film = new filmModel();
+  film = new FilmModel();
 
   horror: boolean = false;
   drama: boolean = false;
@@ -22,34 +23,24 @@ export class FilmCreationComponent implements OnInit {
   crime: boolean = false;
   adventure: boolean = false;
 
-  constructor(private filmService: FilmService) {
+  constructor(private filmService: FilmService,
+              private router: Router) {
   }
 
   ngOnInit() {
-    this.getAllFilms();
-  }
-
-  getAllFilms() {
-    this.filmService.getAllFilms()
-      .subscribe((data: any) => {
-        this.allFilms = data;
-        // console.log(data);
-      });
   }
 
   postFilm() {
     this.filmService.postFilm(this.film)
       .subscribe(resp => {
         // console.log(resp);
+        this.router.navigateByUrl('/films');
         this.limpiaFormulario();
-        this.getAllFilms();
       });
   }
 
-
   guardar(form: NgForm) {
     // console.log(form.value);
-
     let generos: string[] = [];
     if (this.horror) {
         generos.push('Horror');
@@ -75,7 +66,6 @@ export class FilmCreationComponent implements OnInit {
     this.film.genero = generos;
     // console.log(this.film);
     this.postFilm();
-
   }
 
   limpiaFormulario(){

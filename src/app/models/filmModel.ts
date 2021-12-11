@@ -1,4 +1,4 @@
-export class filmModel {
+export class FilmModel {
   id?: string;
   titulo?: string;
   director?: string;

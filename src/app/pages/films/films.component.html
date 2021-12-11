@@ -1,3 +1,28 @@
-<p>
-  films works!
-</p>
+<h1>FILMS</h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Título</th>
+    <th scope="col">Director</th>
+    <th scope="col">Año</th>
+    <th scope="col">Acciones</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let film of films">
+    <th scope="row" ><a [routerLink]="['/filmdetail', film.id]">{{film.id}}</a></th>
+    <td>{{film.titulo}}</td>
+    <td>{{film.director}}</td>
+    <td>{{film.anio}}</td>
+    <td><button (click)="deleteFilm(film.id)" type="button" class="btn btn-warning">Eliminar</button></td>
+  </tr>
+  </tbody>
+</table>
+
+<button type="button"
+        [routerLink]="['/filmcreation']"
+        class="btn btn-outline-primary">
+  Crear film
+</button>

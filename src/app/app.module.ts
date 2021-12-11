@@ -46,7 +46,7 @@ import { FilmsComponent } from './pages/films/films.component';
     FormsModule,
     HttpClientModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

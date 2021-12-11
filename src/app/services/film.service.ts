@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {filmModel} from '../models/film.model';
+import {FilmModel} from '../models/filmModel';
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 
@@ -24,11 +24,11 @@ export class FilmService {
     return this.http.get(`${this.url}/film/`+ id);
   }
 
-  postFilm( film: filmModel){
+  postFilm( film: FilmModel){
     return this.http.post(`${this.url}/film/`, film);
   }
 
-  putFilm(film: filmModel){
+  putFilm(film: FilmModel){
     return this.http.put(`${this.url}/film/` + film.id, film);
   }
 
