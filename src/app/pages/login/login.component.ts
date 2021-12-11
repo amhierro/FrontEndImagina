@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         Swal.close();
         this.router.navigateByUrl('/home');
       }, (err) => {
-        console.log(err);
+        console.log(err.status + ': ' + err.error);
         Swal.fire({
           title: 'Error al autenticar',
           text: 'Espere por favor...'

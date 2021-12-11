@@ -33,7 +33,7 @@ export class AuthService {
     return this.http.get(
       `${this.url}/login/` + usuario.email + `/` + usuario.password)
       .pipe(map(resp => {
-        // console.log(resp);
+        console.log(resp);
         // this.guardarToken(resp['idToken']); // Cuando el back devuelva token, descomento esta linea
         if(resp != null){
           this.guardarToken("TOKEN FICTICIO");
