@@ -70,17 +70,17 @@ export class UserDetailComponent implements OnInit {
   }
 
   getFavFilms(favFilms: Array<string>) {
-    // let favoritos: filmModel[] = [];
-    for (let filmId of favFilms) {
-      this.filmService.getFilm(filmId).subscribe(
-        resp => {
-          this.favFilms.push(resp);
-        }, (err) => {
-          console.log(err);
-        }
-      );
+      for (let filmId of favFilms) {
+        this.filmService.getFilm(filmId).subscribe(
+          resp => {
+            this.favFilms.push(resp);
+          }, (err) => {
+            console.log(err);
+          }
+        );
+      }
     }
-  }
+
 
 
   guardar(form: NgForm) {
